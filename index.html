@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О себе — Кулинар и фуд-блогер</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            line-height: 1.35;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Даниил Левченко</h1>
+        <p>О себе &mdash; кулинар и фуд-блогер</p>
+        <figure>
+            <img src="images/avatar.jpg" alt="Логотип кулинарного блога с изображением тарелки, вилки и ложки"
+                width="200" height="200" style="object-fit: cover;">
+        </figure>
+
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#dishes">Фирменные блюда</a></li>
+                <li><a href="#ingredients">Ингредиенты недели</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#contact">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="skills">
+            <h2>Навыки</h2>
+            <ul>
+                <li>Адаптация традиционных рецептов кухонь мира для домашней готовки.</li>
+                <li>Составление вкусного и сбалансированного меню на каждый день.</li>
+                <li>Фуд-стилистика и выстраивание аппетитной композиции в кадре.</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            <ol>
+                <li class="project-card"><strong>Овсяный блин с арахисовой пастой и бананом:</strong> быстрый, сытный и
+                    полезный завтрак за 10 минут.</li>
+                <li class="project-card"><strong>Кофеиновый шот кодера:</strong> авторский рецепт кофе с темным
+                    шоколадом, чтобы не уснуть за дебаггингом сложного алгоритма на C++.</li>
+                <li class="project-card"><strong>Итальянская паста Неаполитано:</strong> домашняя паста с соусом из
+                    свежих томатов и базиликом.</li>
+            </ol>
+        </section>
+
+        <section id="dishes">
+            <h2>Фирменные блюда</h2>
+            <div class="cards">
+
+                <article class="card">
+                    <img src="images/oatmeal_crepe.webp" alt="Овсяный блин с бананом на тарелке" width="400"
+                        height="300">
+                    <h3>Овсяный блин</h3>
+                    <dl class="card-meta">
+                        <dt>Время</dt>
+                        <dd>10 мин</dd>
+                        <dt>Ккал</dt>
+                        <dd>290</dd>
+                    </dl>
+                </article>
+
+                <article class="card">
+                    <img src="images/coffee_shot.jpg" alt="Стакан холодного кофе с молоком" width="400" height="300">
+                    <h3>Кофеиновый шот кодера</h3>
+                    <dl class="card-meta">
+                        <dt>Время</dt>
+                        <dd>5 мин</dd>
+                        <dt>Ккал</dt>
+                        <dd>120</dd>
+                    </dl>
+                </article>
+
+                <article class="card">
+                    <img src="images/pasta_neapolitano.webp" alt="Паста с томатами черри и базиликом" width="400"
+                        height="300">
+                    <h3>Паста Неаполитано</h3>
+                    <dl class="card-meta">
+                        <dt>Время</dt>
+                        <dd>35 мин</dd>
+                        <dt>Ккал</dt>
+                        <dd>610</dd>
+                    </dl>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="ingredients">
+            <h2>Ингредиенты недели</h2>
+            <div class="grid">
+
+                <article class="ingredient">
+                    <img src="images/pumkin.jpg" alt="Разрезанная тыква со специями" width="300" height="300">
+                    <h3>Тыква</h3>
+                    <p>Бета-каротин для зрения и кожи, много клетчатки при низкой калорийности.</p>
+                </article>
+
+                <article class="ingredient">
+                    <img src="images/cranberry.jpg" alt="Свежая клюква с листьями" width="300" height="300">
+                    <h3>Клюква</h3>
+                    <p>Витамин C и антиоксиданты, поддерживает иммунитет в сезон простуд.</p>
+                </article>
+
+                <article class="ingredient">
+                    <img src="images/white_mushroom.webp" alt="Белый гриб" width="300" height="300">
+                    <h3>Белые грибы</h3>
+                    <p>Растительный белок и витамины группы B, насыщенный вкус без мяса.</p>
+                </article>
+
+                <article class="ingredient">
+                    <img src="images/salmon.png" alt="Филе лосося" width="300" height="300">
+                    <h3>Лосось</h3>
+                    <p>Омега-3 и витамин D, лёгкий белок для восстановления после нагрузок.</p>
+                </article>
+
+                <article class="ingredient">
+                    <img src="images/nuts.jpg" alt="Смесь орехов и семечек" width="300" height="300">
+                    <h3>Грецкий орех</h3>
+                    <p>Полезные жиры для работы мозга и сердца, долгое чувство сытости.</p>
+                </article>
+
+                <article class="ingredient">
+                    <img src="images/honey.jpg" alt="Банка мёда с деревянной ложкой" width="300" height="300">
+                    <h3>Мёд</h3>
+                    <p>Природный антисептик, заменяет сахар и смягчает горло при простуде.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="recipes-section">
+            <h2>Мои рецепты</h2>
+
+            <div class="controls">
+                <button type="button" id="add-recipe">Добавить рецепт</button>
+                <button type="button" id="remove-last">Удалить последний</button>
+                <button type="button" id="toggle-recipes">Скрыть рецепты</button>
+                <button type="button" id="toggle-theme">Тёмная тема</button>
+            </div>
+
+            <div id="recipes-list"></div>
+        </section>
+        
+    </main>
+
+    <aside>
+        <h2>Любимая кухня</h2>
+        <p>Русская &mdash; сытность и глубокая связь с традициями.</p>
+    </aside>
+
+    <section id="contact">
+        <h2>Обратная связь</h2>
+        <form>
+            <p>
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" placeholder="Иван Иванов">
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com">
+            </p>
+            <p>
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" placeholder="Напишите ваш вопрос" rows="4"></textarea>
+            </p>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; Левченко Даниил, 2026</p>
+        <p>Рецепты и вдохновение: <a href="https://eda.ru" target="_blank" rel="noopener">eda.ru</a></p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
