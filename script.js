@@ -77,3 +77,136 @@ console.log("Их доля:", lowCalorie.share + "%");
 if (total > 3000) {
   console.log("Такой рацион лучше распределить на 2 дня");
 }
+
+const recipesSection = document.getElementById("recipes-section");
+const recipesList = document.getElementById("recipes-list");
+const addButton = document.getElementById("add-recipe");
+const removeButton = document.getElementById("remove-last");
+const toggleRecipesButton = document.getElementById("toggle-recipes");
+const toggleThemeButton = document.getElementById("toggle-theme");
+
+if (!recipesList || !addButton || !removeButton || !toggleRecipesButton || !toggleThemeButton) {
+  console.error("Не найдены элементы интерфейса рецептов");
+} else {
+  console.log("Элементы интерфейса найдены");
+}
+
+let recipes = [];
+
+function renderRecipes() {
+  recipesList.textContent = "";
+
+  for (const recipe of recipes) {
+    const card = document.createElement("article");
+    card.className = "recipe-card";
+
+    const title = document.createElement("h3");
+    title.textContent = recipe.name;
+
+    const list = document.createElement("ul");
+
+    for (const item of recipe.ingredients) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.append(li);
+    }
+
+    card.append(title);
+    card.append(list);
+    recipesList.append(card);
+  }
+}
+
+function saveRecipes() {
+  localStorage.setItem("recipes", JSON.stringify(recipes));
+}
+
+function loadRecipes() {
+  const saved = localStorage.getItem("recipes");
+
+  if (!saved) {
+    return;
+  }
+
+  try {
+    recipes = JSON.parse(saved);
+  } catch (error) {
+    console.error("Не удалось прочитать сохранённые рецепты:", error);
+    recipes = [];
+  }
+}
+
+addButton.addEventListener("click", function () {
+  const name = prompt("Название рецепта:");
+
+  if (!name) {
+    return;
+  }
+
+  const ingredientsInput = prompt("Ингредиенты через запятую:");
+
+  if (!ingredientsInput) {
+    return;
+  }
+
+  const ingredients = ingredientsInput.split(",");
+
+  for (let i = 0; i < ingredients.length; i++) {
+    ingredients[i] = ingredients[i].trim();
+  }
+
+  recipes.push({ name: name, ingredients: ingredients });
+  saveRecipes();
+  renderRecipes();
+});
+
+removeButton.addEventListener("click", function () {
+  if (recipes.length === 0) {
+    alert("Список рецептов пуст");
+    return;
+  }
+
+  recipes.pop();
+  saveRecipes();
+  renderRecipes();
+});
+
+toggleRecipesButton.addEventListener("click", function () {
+  recipesList.classList.toggle("hidden");
+
+  if (recipesList.classList.contains("hidden")) {
+    toggleRecipesButton.textContent = "Показать рецепты";
+  } else {
+    toggleRecipesButton.textContent = "Скрыть рецепты";
+  }
+});
+
+toggleThemeButton.addEventListener("click", function () {
+  document.body.classList.toggle("dark");
+
+  const isDark = document.body.classList.contains("dark");
+
+  if (isDark) {
+    localStorage.setItem("theme", "dark");
+    toggleThemeButton.textContent = "Светлая тема";
+  } else {
+    localStorage.setItem("theme", "light");
+    toggleThemeButton.textContent = "Тёмная тема";
+  }
+});
+
+function applySavedTheme() {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleThemeButton.textContent = "Светлая тема";
+  }
+}
+
+applySavedTheme();
+loadRecipes();
+renderRecipes();
+
+console.log("Загружено рецептов:", recipes.length);
+console.log("Карточек на странице:", document.querySelectorAll(".recipe-card").length);

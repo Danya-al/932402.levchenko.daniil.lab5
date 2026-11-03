@@ -187,6 +187,72 @@ ol {
   font-size: 0.95rem;
 }
 
+#toggle-theme {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#recipes-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.recipe-card {
+  background-color: var(--card-bg);
+  border-left: 5px solid var(--terracotta);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+}
+
+.recipe-card h3 {
+  margin: 0 0 8px;
+  color: var(--brown);
+  font-size: 1.1rem;
+}
+
+.recipe-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+body.dark {
+  --cream: #241d18;
+  --card-bg: #3a2e24;
+  --text: #ede3d4;
+  --brown: #e0a060;
+  --terracotta: #e07b3c;
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #2e251d;
+  color: var(--text);
+}
+
+body.dark button {
+  color: #1a1410;
+}
+
+body.dark .project-card::before {
+  background-color: #4a3a2c;
+}
+
 form p {
   margin-bottom: 14px;
 }
@@ -282,6 +348,10 @@ ul li {
   }
 
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #recipes-list {
     grid-template-columns: 1fr;
   }
 
